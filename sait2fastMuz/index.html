@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fastMuz | Свободный музыкальный плеер</title>
+    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="nav-container">
+        
+        <a href="index.html" class="back-nav glass-panel">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </a>
+
+        <header class="top-nav glass-panel">
+            <div class="logo"><i>fast</i><span class="white-logo">muz</span></div>
+            <a href="https://t.me/твой_канал" target="_blank" class="tg-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </a>
+        </header>
+        
+    </div>
+
+    <main class="container">
+        
+        <section class="hero glass-panel">
+            <div class="hero-content">
+                <div class="hero-icon">
+                    <img src="icon.png" alt="fastMuz Icon" class="app-icon" placeholder="ИКОНКА">
+                </div>
+                
+                <div class="hero-text">
+                    <h1 class="hero-title">Твоя музыка.<br>Твои правила.</h1>
+                    <p class="hero-subtitle">Свободный стриминговый плеер на базе открытого исходного кода. Полноценная независимая замена популярным сервисам.</p>
+                    <div class="hero-actions">
+                        <a href="#" class="btn hero-btn" style="background: var(--neon-purple); box-shadow: 0 0 20px var(--neon-purple);">СЛУШАТЬ В ВЕБЕ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="services-stack">
+
+            <section class="glass-panel large-feature-block">
+                <div class="block-header">
+                    <h2 class="brand-title">АБСОЛЮТНАЯ СВОБОДА</h2>
+                    <p class="service-desc">Никакой аудиорекламы, никаких ограничений на пропуск треков и никаких платных подписок. Слушай музыку в максимальном качестве абсолютно бесплатно.</p>
+                </div>
+                
+                <div class="ui-showcase-placeholder">
+                    <p>+ Сюда будешь вставлять фото интерфейса</p>
+                </div>
+            </section>
+
+            <div class="features-grid">
+                
+                <section class="glass-panel cube-card">
+                    <h2 class="brand-title">ОТКРЫТЫЙ КОД</h2>
+                    <p class="service-desc">Проект создан энтузиастами для сообщества. Полная прозрачность алгоритмов рекомендаций и 100% гарантия безопасности твоих личных данных.</p>
+                    <a href="#" class="btn">GitHub</a>
+                </section>
+
+                <section class="glass-panel cube-card">
+                    <h2 class="brand-title">НА ВСЕХ УСТРОЙСТВАХ</h2>
+                    <p class="service-desc">Удобные нативные приложения для Windows, macOS, Android и iOS. Твоя медиатека и плейлисты мгновенно синхронизируются везде.</p>
+                    <a href="#" class="btn">Скачать</a>
+                </section>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

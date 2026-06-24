@@ -1,0 +1,186 @@
+/* Сброс стандартных отступов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Цветовая схема экосистемы */
+:root {
+    --bg-dark: #0b0b0e;
+    --neon-purple: #8A2BE2; 
+    --neon-dark: #5D10A6;
+    --text-white: #ffffff;
+    --text-gray: #a1a1aa;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* --- АНИМАЦИЯ ФОНА (Фиксированный неон) --- */
+.blob {
+    position: fixed; /* Изменено на fixed, чтобы пятна не уезжали при скролле */
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.5;
+    z-index: -1;
+    animation: float 14s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+    width: 450px;
+    height: 450px;
+    background: var(--neon-purple);
+    top: -10%;
+    left: 5%;
+}
+
+.blob-2 {
+    width: 550px;
+    height: 550px;
+    background: var(--neon-dark);
+    bottom: -15%;
+    right: -5%;
+    animation-delay: -4s;
+}
+
+.blob-3 {
+    width: 350px;
+    height: 350px;
+    background: var(--neon-purple);
+    top: 50%;
+    left: 35%;
+    opacity: 0.3;
+    animation-delay: -8s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 70px) scale(1.15); }
+}
+
+/* --- КОНТЕЙНЕР --- */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Увеличено, чтобы вместить сетку */
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* --- ШАПКА САЙТА --- */
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.logo {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--neon-purple);
+    letter-spacing: -4px;
+    text-transform: lowercase;
+    text-shadow: 0 0 35px rgba(138, 43, 226, 0.5);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- АДАПТИВНАЯ СЕТКА БЛОКОВ --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* --- СТИЛЬ ЖИДКОГО/МАТОВОГО СТЕКЛА --- */
+.glass-panel {
+    background: rgba(18, 18, 22, 0.45);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 28px;
+    padding: 45px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Чтобы кнопки всегда были внизу, если текст разной длины */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+/* Эффект наведения на всю карточку */
+.glass-panel:hover {
+    transform: translateY(-5px);
+    border-color: rgba(138, 43, 226, 0.3);
+}
+
+/* --- СТИЛИЗАЦИЯ НАЗВАНИЙ СЕРВИСОВ --- */
+.brand-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+/* Тот самый фокус: выделяем приставку fast внутри заголовков */
+.brand-title i {
+    font-style: italic;
+    color: var(--neon-purple);
+    text-transform: lowercase;
+    padding-right: 2px;
+}
+
+.service-desc {
+    color: var(--text-gray);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    flex-grow: 1; /* Позволяет тексту занимать свободное место */
+}
+
+/* --- ФУТУРИСТИЧНАЯ КНОПКА --- */
+.btn {
+    display: block;
+    text-align: center;
+    padding: 15px 0;
+    background: transparent;
+    color: var(--text-white);
+    text-decoration: none;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid var(--neon-purple);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--neon-purple);
+    box-shadow: 0 0 25px var(--neon-purple);
+}
+
+/* --- СТИЛИ ДЛЯ МОБИЛЬНЫХ ЭКРАНОВ --- */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 3.5rem;
+    }
+    .container {
+        padding: 40px 15px;
+    }
+    .glass-panel {
+        padding: 35px 25px;
+    }
+}

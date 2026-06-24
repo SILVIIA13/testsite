@@ -1,0 +1,144 @@
+/* Сбрасываем стандартные отступы браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Цветовые переменные */
+:root {
+    --bg-dark: #0b0b0e;
+    --neon-purple: #8A2BE2; /* Тот самый цвет с картинки */
+    --neon-dark: #5D10A6;
+    --text-white: #ffffff;
+    --text-gray: #a1a1aa;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Прячем все, что вылезает за экран */
+}
+
+/* --- АНИМАЦИЯ ФОНА (Неоновые сгустки) --- */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px); /* Сильное размытие, чтобы сделать свет мягким */
+    opacity: 0.6;
+    z-index: -1;
+    animation: float 12s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--neon-purple);
+    top: -10%;
+    left: 10%;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: var(--neon-dark);
+    bottom: -20%;
+    right: 5%;
+    animation-delay: -4s;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--neon-purple);
+    top: 40%;
+    left: 40%;
+    opacity: 0.4;
+    animation-delay: -8s;
+}
+
+/* Плавное движение пятен */
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(60px, 80px) scale(1.2); }
+}
+
+/* --- ОСНОВНОЙ КОНТЕЙНЕР --- */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 1;
+}
+
+/* --- ЛОГОТИП --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--neon-purple);
+    letter-spacing: -4px;
+    text-transform: lowercase;
+    text-shadow: 0 0 30px rgba(138, 43, 226, 0.4); /* Легкое неоновое свечение */
+}
+
+/* --- ЭФФЕКТ ТЕМНОГО СТЕКЛА --- */
+.glass-panel {
+    background: rgba(20, 20, 23, 0.4);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.glass-panel h1 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.glass-panel p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* --- КНОПКА (Форма "Таблетки") --- */
+.btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: transparent;
+    color: var(--text-white);
+    text-decoration: none;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid var(--neon-purple);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении на кнопку */
+.btn:hover {
+    background: var(--neon-purple);
+    box-shadow: 0 0 25px var(--neon-purple); /* Вспышка неона */
+    transform: translateY(-2px); /* Легкий прыжок вверх */
+}
